@@ -19,3 +19,23 @@ function login(){
     }
   }
 }
+
+function register(){
+  let email = document.getElementById("userEmailRegister").value
+  let password = document.getElementById("userPasswordRegister").value
+
+  for (let x of registeredUser){
+    if (email === x.username){
+      console.log("Account taken")
+      return
+    }
+  }
+  
+  let newUser = {
+    username: email,
+    password: password,
+  }
+
+  registeredUser.push(newUser)
+  console.log("registered succesfully")
+}
